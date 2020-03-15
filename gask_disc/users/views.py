@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
-from .forms import UserRegistrationForm
 from django.contrib import messages
+from django.shortcuts import redirect, render
+
+from .forms import UserRegistrationForm
 
 
 def register(request):
@@ -10,8 +11,8 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(
-                request, f'Account for {username} created successfully!')
-            return redirect('blog-home')
+                request, f'Account for {username} created successfully! Please login to access GASK Fresh')
+            return redirect('login')
     else:
         form = UserRegistrationForm()
     return render(request, 'users/register.html', {'form': form})
