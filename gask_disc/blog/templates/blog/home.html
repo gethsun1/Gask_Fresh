@@ -6,6 +6,7 @@
 
    <article class="media content-section">
       <div class="media-body">
+        <img class="rounded-circle article-img" src="{{ post.author.profile.img.url }}">
         <div class="article-metadata">
           <a class="mr-2" href="#">{{ post.author }}</a>
           <small class="text-muted">{{ post.date_posted|date:"M d, Y" }} {{ post.date_posted|time:"h:i a" }}</small>
